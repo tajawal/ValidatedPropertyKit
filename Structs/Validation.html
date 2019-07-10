@@ -50,13 +50,13 @@
             <a href="../Structs.html">Structures</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Structs/AnyValidatable.html">AnyValidatable</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Structs/Validated.html">Validated</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/Validation.html">Validation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ValidationError.html">ValidationError</a>
               </li>
             </ul>
           </li>
@@ -98,14 +98,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The Predicate Typealias representing <code>(Value) -&gt; Bool</code></p>
+                        <p>The Predicate Typealias representing <code>(Value) -&gt; Result&lt;Void, ValidationError&gt;</code></p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">Predicate</span> <span class="o">=</span> <span class="p">(</span><span class="kt">Value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">Predicate</span> <span class="o">=</span> <span class="p">(</span><span class="kt">Value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Result</span><span class="o">&lt;</span><span class="kt">Void</span><span class="p">,</span> <span class="kt"><a href="../Structs/ValidationError.html">ValidationError</a></span><span class="o">&gt;</span></code></pre>
 
                         </div>
                       </div>
@@ -126,9 +126,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:20ValidatedPropertyKit10ValidationV9predicateACyxGSbxc_tcfc"></a>
+                    <a name="/s:20ValidatedPropertyKit10ValidationV9predicateACyxGs6ResultOyytAA0D5ErrorVGxc_tcfc"></a>
                     <a name="//apple_ref/swift/Method/init(predicate:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:20ValidatedPropertyKit10ValidationV9predicateACyxGSbxc_tcfc">init(predicate:)</a>
+                    <a class="token" href="#/s:20ValidatedPropertyKit10ValidationV9predicateACyxGs6ResultOyytAA0D5ErrorVGxc_tcfc">init(predicate:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1541,9 +1541,9 @@ of the sequence are the same as the elements in another sequence</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:20ValidatedPropertyKit10ValidationV7isValid5valueSbx_tF"></a>
+                    <a name="/s:20ValidatedPropertyKit10ValidationV7isValid5values6ResultOyytAA0D5ErrorVGx_tF"></a>
                     <a name="//apple_ref/swift/Method/isValid(value:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:20ValidatedPropertyKit10ValidationV7isValid5valueSbx_tF">isValid(value:)</a>
+                    <a class="token" href="#/s:20ValidatedPropertyKit10ValidationV7isValid5values6ResultOyytAA0D5ErrorVGx_tF">isValid(value:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1558,7 +1558,7 @@ of the sequence are the same as the elements in another sequence</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">isValid</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="kt">Value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">isValid</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="kt">Value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Result</span><span class="o">&lt;</span><span class="kt">Void</span><span class="p">,</span> <span class="kt"><a href="../Structs/ValidationError.html">ValidationError</a></span><span class="o">&gt;</span></code></pre>
 
                         </div>
                       </div>
@@ -1583,7 +1583,7 @@ of the sequence are the same as the elements in another sequence</p>
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>A Bool if the given Value is valid or not</p>
+                        <p>A Result if the validation succeeded or failed</p>
                       </div>
                     </section>
                   </div>

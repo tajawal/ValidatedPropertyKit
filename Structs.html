@@ -50,13 +50,13 @@
             <a href="Structs.html">Structures</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Structs/AnyValidatable.html">AnyValidatable</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="Structs/Validated.html">Validated</a>
               </li>
               <li class="nav-group-task">
                 <a href="Structs/Validation.html">Validation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/ValidationError.html">ValidationError</a>
               </li>
             </ul>
           </li>
@@ -70,45 +70,6 @@
 
           </section>
           <section class="section task-group-section">
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/AnyValidatable"></a>
-                <a name="//apple_ref/swift/Section/AnyValidatable" class="dashAnchor"></a>
-                <a href="#/AnyValidatable">
-                  <h3 class="section-name">AnyValidatable</h3>
-                </a>
-              </div>
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:20ValidatedPropertyKit14AnyValidatableV"></a>
-                    <a name="//apple_ref/swift/Struct/AnyValidatable" class="dashAnchor"></a>
-                    <a class="token" href="#/s:20ValidatedPropertyKit14AnyValidatableV">AnyValidatable</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The AnyValidatable Type-Erasure for the <code><a href="Protocols/Validatable.html">Validatable</a></code> protocol</p>
-
-                        <a href="Structs/AnyValidatable.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">AnyValidatable</span><span class="o">&lt;</span><span class="kt">Value</span><span class="o">&gt;</span> <span class="p">:</span> <span class="kt"><a href="Protocols/Validatable.html">Validatable</a></span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
             <div class="task-group">
               <div class="task-name-container">
                 <a name="/Validated"></a>
@@ -131,22 +92,89 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The <code>@Validated</code> PropertyWrapper</p>
+                        <p>The <code>@Validated</code> PropertyWrapper to easily validate your properties 👮</p>
 
 <p>Based on the given <code><a href="Structs/Validation.html">Validation</a></code> during the initialization of the <code>@Validated</code> PropertyWrapper
-each new <code>Value</code> that is going to be set will get <code>validated</code> by the <code><a href="Structs/Validation.html">Validation</a></code>.</p>
+each new <code>Value</code> that is going to be set will be <code>validated</code> by the <code><a href="Structs/Validation.html">Validation</a></code>.
+If the validation fails the <code>Value</code> will become <code>nil</code>.</p>
+<h1 id='important' class='heading'>Important:</h1>
 
-<p>If the validation fails the <code>Value</code> will become <code>nil</code>.</p>
+<p><code>@Validated</code> can only be applied to <code>Optional</code> types.</p>
+<h1 id='example' class='heading'>Example:</h1>
+<pre class="highlight swift"><code><span class="c1">// Username will be nil if String is empty</span>
+<span class="kd">@Validated(.nonEmpty)</span>
+<span class="k">var</span> <span class="nv">username</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
 
-<p>By using the <code>restore()</code> function you can restore the value to its last successful valiated value</p>
-<div class="aside aside-important">
-    <p class="aside-title">Important</p>
-    <code>@Validated</code> can only be applied to <code>Optional</code> types.
+<span class="c1">// AvatarURL will be nil if String isn't a valid URL and has a "https" prefix</span>
+<span class="kd">@Validated(.isURL &amp;&amp; .hasPrefix("https")</span><span class="p">)</span>
+<span class="k">var</span> <span class="nv">avatarURL</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
+</code></pre>
+<h1 id='error-handling' class='heading'>Error Handling 🕵️‍♂️</h1>
 
-</div>
-<h1 id='usage' class='heading'>Usage:</h1>
-<pre class="highlight swift"><code><span class="kd">@Validated(.email)</span>
-<span class="k">var</span> <span class="nv">email</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
+<p>Beside doing a simple <code>nil</code> check on your <code>@Validated</code> property to ensure if the value is valid or not
+you can access the validatedValue or validationError property to retrieve the <code><a href="Structs/ValidationError.html">ValidationError</a></code> or the valid value.</p>
+<pre class="highlight swift"><code><span class="kd">@Validated(.nonEmpty)</span>
+<span class="k">var</span> <span class="nv">username</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
+
+<span class="c1">// Switch on `validatedValue`</span>
+<span class="k">switch</span> <span class="err">$</span><span class="n">username</span><span class="o">.</span><span class="n">validatedValue</span> <span class="p">{</span>
+<span class="k">case</span> <span class="o">.</span><span class="nf">success</span><span class="p">(</span><span class="k">let</span> <span class="nv">value</span><span class="p">):</span>
+    <span class="c1">// Value is valid ✅</span>
+    <span class="k">break</span>
+<span class="k">case</span> <span class="o">.</span><span class="nf">failure</span><span class="p">(</span><span class="k">let</span> <span class="nv">validationError</span><span class="p">):</span>
+    <span class="c1">// Value is invalid ⛔️</span>
+    <span class="k">break</span>
+<span class="p">}</span>
+
+<span class="c1">// Or unwrap the `validationError`</span>
+<span class="k">if</span> <span class="k">let</span> <span class="nv">validationError</span> <span class="o">=</span> <span class="err">$</span><span class="n">username</span><span class="o">.</span><span class="n">validationError</span> <span class="p">{</span>
+    <span class="c1">// Value is invalid ⛔️</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="c1">// Value is valid ✅</span>
+<span class="p">}</span>
+</code></pre>
+<h1 id='restore' class='heading'>Restore ↩️</h1>
+
+<p>You can <code>restore</code> your <code>@Validated</code> property to the last successful validated value.</p>
+<pre class="highlight swift"><code><span class="kd">@Validated(.nonEmpty)</span>
+<span class="k">var</span> <span class="nv">username</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
+
+<span class="n">username</span> <span class="o">=</span> <span class="s">"Mr.Robot"</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">username</span><span class="p">)</span> <span class="c1">// "Mr.Robot"</span>
+
+<span class="n">username</span> <span class="o">=</span> <span class="s">""</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">username</span><span class="p">)</span> <span class="c1">// nil</span>
+
+<span class="c1">// Restore to last successful validated value</span>
+<span class="err">$</span><span class="n">username</span><span class="o">.</span><span class="nf">restore</span><span class="p">()</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">username</span><span class="p">)</span> <span class="c1">// "Mr.Robot"</span>
+</code></pre>
+<h1 id='isvalid' class='heading'>isValid ✅</h1>
+
+<p>You can access the isValid Bool value property to check if the current value is valid.</p>
+<pre class="highlight swift"><code><span class="kd">@Validated(.nonEmpty)</span>
+<span class="k">var</span> <span class="nv">username</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
+
+<span class="n">username</span> <span class="o">=</span> <span class="s">"Mr.Robot"</span>
+<span class="nf">print</span><span class="p">(</span><span class="err">$</span><span class="n">username</span><span class="o">.</span><span class="n">isValid</span><span class="p">)</span> <span class="c1">// true</span>
+
+<span class="n">username</span> <span class="o">=</span> <span class="s">""</span>
+<span class="nf">print</span><span class="p">(</span><span class="err">$</span><span class="n">username</span><span class="o">.</span><span class="n">isValid</span><span class="p">)</span> <span class="c1">// false</span>
+</code></pre>
+<h1 id='validation-operators' class='heading'>Validation Operators 🔗</h1>
+
+<p>Validation Operators allowing you to combine multiple Validations like you would do with Bool values.</p>
+<pre class="highlight swift"><code><span class="c1">// Logical AND</span>
+<span class="kd">@Validated(.isURL &amp;&amp; .hasPrefix("https")</span><span class="p">)</span>
+<span class="k">var</span> <span class="nv">avatarURL</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
+
+<span class="c1">// Logical OR</span>
+<span class="kd">@Validated(.hasPrefix("Mr.")</span> <span class="o">||</span> <span class="o">.</span><span class="nf">hasPrefix</span><span class="p">(</span><span class="s">"Mrs."</span><span class="p">))</span>
+<span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
+
+<span class="c1">// Logical NOT</span>
+<span class="kd">@Validated(!.contains("Android", options: .caseInsensitive)</span><span class="p">)</span>
+<span class="k">var</span> <span class="nv">favoriteOperatingSystem</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
 </code></pre>
 
                         <a href="Structs/Validated.html" class="slightly-smaller">See more</a>
@@ -155,7 +183,8 @@ each new <code>Value</code> that is going to be set will get <code>validated</co
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Validated</span><span class="o">&lt;</span><span class="kt">Value</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">Value</span> <span class="p">:</span> <span class="kt"><a href="Protocols/Optionalable.html">Optionalable</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@propertyWrapper</span>
+<span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Validated</span><span class="o">&lt;</span><span class="kt">Value</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">Value</span> <span class="p">:</span> <span class="kt"><a href="Protocols/Optionalable.html">Optionalable</a></span></code></pre>
 
                         </div>
                       </div>
@@ -195,6 +224,45 @@ each new <code>Value</code> that is going to be set will get <code>validated</co
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Validation</span><span class="o">&lt;</span><span class="kt">Value</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/ValidationError"></a>
+                <a name="//apple_ref/swift/Section/ValidationError" class="dashAnchor"></a>
+                <a href="#/ValidationError">
+                  <h3 class="section-name">ValidationError</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:20ValidatedPropertyKit15ValidationErrorV"></a>
+                    <a name="//apple_ref/swift/Struct/ValidationError" class="dashAnchor"></a>
+                    <a class="token" href="#/s:20ValidatedPropertyKit15ValidationErrorV">ValidationError</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The ValidationError</p>
+
+                        <a href="Structs/ValidationError.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">ValidationError</span> <span class="p">:</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt">Equatable</span><span class="p">,</span> <span class="kt">Hashable</span></code></pre>
 
                         </div>
                       </div>

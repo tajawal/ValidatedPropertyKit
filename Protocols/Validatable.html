@@ -50,13 +50,13 @@
             <a href="../Structs.html">Structures</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Structs/AnyValidatable.html">AnyValidatable</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Structs/Validated.html">Validated</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/Validation.html">Validation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ValidationError.html">ValidationError</a>
               </li>
             </ul>
           </li>
@@ -91,7 +91,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The generic Value</p>
+                        <p>The Value type</p>
 
                       </div>
                       <div class="declaration">
@@ -108,9 +108,63 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:20ValidatedPropertyKit11ValidatableP7isValid5valueSb5ValueQz_tF"></a>
+                    <a name="/s:20ValidatedPropertyKit11ValidatableP7SuccessQa"></a>
+                    <a name="//apple_ref/swift/Alias/Success" class="dashAnchor"></a>
+                    <a class="token" href="#/s:20ValidatedPropertyKit11ValidatableP7SuccessQa">Success</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The Success type</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">associatedtype</span> <span class="kt">Success</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:20ValidatedPropertyKit11ValidatableP7FailureQa"></a>
+                    <a name="//apple_ref/swift/Alias/Failure" class="dashAnchor"></a>
+                    <a class="token" href="#/s:20ValidatedPropertyKit11ValidatableP7FailureQa">Failure</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The Failure type</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">associatedtype</span> <span class="kt">Failure</span> <span class="p">:</span> <span class="kt">Error</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:20ValidatedPropertyKit11ValidatableP7isValid5values6ResultOy7SuccessQz7FailureQzG5ValueQz_tF"></a>
                     <a name="//apple_ref/swift/Method/isValid(value:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:20ValidatedPropertyKit11ValidatableP7isValid5valueSb5ValueQz_tF">isValid(value:)</a>
+                    <a class="token" href="#/s:20ValidatedPropertyKit11ValidatableP7isValid5values6ResultOy7SuccessQz7FailureQzG5ValueQz_tF">isValid(value:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -125,7 +179,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">isValid</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Validatable.html#/s:20ValidatedPropertyKit11ValidatableP5ValueQa">Value</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">isValid</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Validatable.html#/s:20ValidatedPropertyKit11ValidatableP5ValueQa">Value</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Result</span><span class="o">&lt;</span><span class="kt"><a href="../Protocols/Validatable.html#/s:20ValidatedPropertyKit11ValidatableP7SuccessQa">Success</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/Validatable.html#/s:20ValidatedPropertyKit11ValidatableP7FailureQa">Failure</a></span><span class="o">&gt;</span></code></pre>
 
                         </div>
                       </div>
@@ -150,7 +204,7 @@
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>A Bool if the given Value is valid or not</p>
+                        <p>A Result if the validation succeeded or failed</p>
                       </div>
                     </section>
                   </div>
