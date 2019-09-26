@@ -103,19 +103,19 @@
 <p><br/></p>
 <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">User</span> <span class="p">{</span>
 
-    <span class="kd">@Validated(.nonEmpty)</span>
+    <span class="kd">@Validated</span><span class="p">(</span><span class="o">.</span><span class="n">nonEmpty</span><span class="p">)</span>
     <span class="k">var</span> <span class="nv">username</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
 
-    <span class="kd">@Validated(.isEmail)</span>
+    <span class="kd">@Validated</span><span class="p">(</span><span class="o">.</span><span class="n">isEmail</span><span class="p">)</span>
     <span class="k">var</span> <span class="nv">email</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
 
-    <span class="kd">@Validated(.range(8...)</span><span class="p">)</span>
+    <span class="kd">@Validated</span><span class="p">(</span><span class="o">.</span><span class="nf">range</span><span class="p">(</span><span class="mi">8</span><span class="o">...</span><span class="p">))</span>
     <span class="k">var</span> <span class="nv">password</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
 
-    <span class="kd">@Validated(.greaterOrEqual(1)</span><span class="p">)</span>
+    <span class="kd">@Validated</span><span class="p">(</span><span class="o">.</span><span class="nf">greaterOrEqual</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
     <span class="k">var</span> <span class="nv">friends</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span>
 
-    <span class="kd">@Validated(.isURL &amp;&amp; .hasPrefix("https")</span><span class="p">)</span>
+    <span class="kd">@Validated</span><span class="p">(</span><span class="o">.</span><span class="n">isURL</span> <span class="o">&amp;&amp;</span> <span class="o">.</span><span class="nf">hasPrefix</span><span class="p">(</span><span class="s">"https"</span><span class="p">))</span>
     <span class="k">var</span> <span class="nv">avatarURL</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
 
 <span class="p">}</span>
@@ -167,12 +167,12 @@ it, simply add the following line to your Podfile:</p>
 
 <p>If you prefer not to use any of the aforementioned dependency managers, you can integrate ValidatedPropertyKit into your project manually. Simply drag the <code>Sources</code> Folder into your Xcode project.</p>
 <h2 id='usage' class='heading'>Usage</h2>
-<h3 id='validated' class='heading'>Validated 👮‍♂️</h3>
+<h3 id='validated-️' class='heading'>Validated 👮‍♂️</h3>
 
 <p>The <code>@Validated</code> attribute allows you to specify a validation along to the declaration of your property.</p>
 
 <p>It is important to say that the <code>@Validated</code> attribute can only be applied to mutable <a href="https://developer.apple.com/documentation/swift/optional"><code>Optional</code></a> types as a validation can either succeed or fail.</p>
-<pre class="highlight swift"><code><span class="kd">@Validated(.nonEmpty)</span>
+<pre class="highlight swift"><code><span class="kd">@Validated</span><span class="p">(</span><span class="o">.</span><span class="n">nonEmpty</span><span class="p">)</span>
 <span class="k">var</span> <span class="nv">username</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
 
 <span class="n">username</span> <span class="o">=</span> <span class="s">"Mr.Robot"</span>
@@ -184,8 +184,8 @@ it, simply add the following line to your Podfile:</p>
 <h3 id='validation' class='heading'>Validation 🚦</h3>
 
 <p>Every <code>@Validated</code> attribute must be initialized with a <code><a href="Structs/Validation.html">Validation</a></code> which will be initialized with a closure.</p>
-<pre class="highlight swift"><code><span class="kd">@Validated(.init { value in
-   value.isEmpty ? .failure("String is empty")</span> <span class="p">:</span> <span class="o">.</span><span class="nf">success</span><span class="p">(())</span>
+<pre class="highlight swift"><code><span class="kd">@Validated</span><span class="p">(</span><span class="o">.</span><span class="kd">init</span> <span class="p">{</span> <span class="n">value</span> <span class="k">in</span>
+   <span class="n">value</span><span class="o">.</span><span class="n">isEmpty</span> <span class="p">?</span> <span class="o">.</span><span class="nf">failure</span><span class="p">(</span><span class="s">"String is empty"</span><span class="p">)</span> <span class="p">:</span> <span class="o">.</span><span class="nf">success</span><span class="p">(())</span>
 <span class="p">})</span>
 <span class="k">var</span> <span class="nv">username</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
 </code></pre>
@@ -208,15 +208,15 @@ it, simply add the following line to your Podfile:</p>
 </code></pre>
 
 <p>And apply them to your validated property.</p>
-<pre class="highlight swift"><code><span class="kd">@Validated(.isMeaningOfLife)</span>
+<pre class="highlight swift"><code><span class="kd">@Validated</span><span class="p">(</span><span class="o">.</span><span class="n">isMeaningOfLife</span><span class="p">)</span>
 <span class="k">var</span> <span class="nv">number</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span>
 </code></pre>
-<h3 id='error-handling' class='heading'>Error Handling 🕵️‍♂️</h3>
+<h3 id='error-handling-️-️' class='heading'>Error Handling 🕵️‍♂️</h3>
 
 <p>Each property that is declared with the <code>@Validated</code> attribute can make use of advanced functions and properties from the <code><a href="Structs/Validated.html">Validated</a></code> Property Wrapper itself via the <code>$</code> notation prefix.</p>
 
 <p>Beside doing a simple <code>nil</code> check on your <code>@Validated</code> property to ensure if the value is valid or not you can access the <code>validatedValue</code> or <code>validationError</code> property to retrieve the <code><a href="Structs/ValidationError.html">ValidationError</a></code> or the valid value.</p>
-<pre class="highlight swift"><code><span class="kd">@Validated(.nonEmpty)</span>
+<pre class="highlight swift"><code><span class="kd">@Validated</span><span class="p">(</span><span class="o">.</span><span class="n">nonEmpty</span><span class="p">)</span>
 <span class="k">var</span> <span class="nv">username</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
 
 <span class="c1">// Switch on `validatedValue`</span>
@@ -237,10 +237,10 @@ it, simply add the following line to your Podfile:</p>
 <span class="p">}</span>
 
 </code></pre>
-<h3 id='restore' class='heading'>Restore ↩️</h3>
+<h3 id='restore-️' class='heading'>Restore ↩️</h3>
 
 <p>Additionally, you can <code>restore</code> your <code>@Validated</code> property to the last successful validated value.</p>
-<pre class="highlight swift"><code><span class="kd">@Validated(.nonEmpty)</span>
+<pre class="highlight swift"><code><span class="kd">@Validated</span><span class="p">(</span><span class="o">.</span><span class="n">nonEmpty</span><span class="p">)</span>
 <span class="k">var</span> <span class="nv">username</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
 
 <span class="n">username</span> <span class="o">=</span> <span class="s">"Mr.Robot"</span>
@@ -256,7 +256,7 @@ it, simply add the following line to your Podfile:</p>
 <h3 id='isvalid' class='heading'>isValid ✅</h3>
 
 <p>As the aforementioned <code>restore()</code> function you can also access the <code>isValid</code> Bool value property to check if the current value is valid.</p>
-<pre class="highlight swift"><code><span class="kd">@Validated(.nonEmpty)</span>
+<pre class="highlight swift"><code><span class="kd">@Validated</span><span class="p">(</span><span class="o">.</span><span class="n">nonEmpty</span><span class="p">)</span>
 <span class="k">var</span> <span class="nv">username</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
 
 <span class="n">username</span> <span class="o">=</span> <span class="s">"Mr.Robot"</span>
@@ -269,15 +269,15 @@ it, simply add the following line to your Podfile:</p>
 
 <p>Validation Operators allowing you to combine multiple Validations like you would do with Bool values.</p>
 <pre class="highlight swift"><code><span class="c1">// Logical AND</span>
-<span class="kd">@Validated(.isURL &amp;&amp; .hasPrefix("https")</span><span class="p">)</span>
+<span class="kd">@Validated</span><span class="p">(</span><span class="o">.</span><span class="n">isURL</span> <span class="o">&amp;&amp;</span> <span class="o">.</span><span class="nf">hasPrefix</span><span class="p">(</span><span class="s">"https"</span><span class="p">))</span>
 <span class="k">var</span> <span class="nv">avatarURL</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
 
 <span class="c1">// Logical OR</span>
-<span class="kd">@Validated(.hasPrefix("Mr.")</span> <span class="o">||</span> <span class="o">.</span><span class="nf">hasPrefix</span><span class="p">(</span><span class="s">"Mrs."</span><span class="p">))</span>
+<span class="kd">@Validated</span><span class="p">(</span><span class="o">.</span><span class="nf">hasPrefix</span><span class="p">(</span><span class="s">"Mr."</span><span class="p">)</span> <span class="o">||</span> <span class="o">.</span><span class="nf">hasPrefix</span><span class="p">(</span><span class="s">"Mrs."</span><span class="p">))</span>
 <span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
 
 <span class="c1">// Logical NOT</span>
-<span class="kd">@Validated(!.contains("Android", options: .caseInsensitive)</span><span class="p">)</span>
+<span class="kd">@Validated</span><span class="p">(</span><span class="o">!.</span><span class="nf">contains</span><span class="p">(</span><span class="s">"Android"</span><span class="p">,</span> <span class="nv">options</span><span class="p">:</span> <span class="o">.</span><span class="n">caseInsensitive</span><span class="p">))</span>
 <span class="k">var</span> <span class="nv">favoriteOperatingSystem</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
 </code></pre>
 <h3 id='predefined-validations' class='heading'>Predefined Validations</h3>
@@ -287,81 +287,81 @@ it, simply add the following line to your Podfile:</p>
 <p><strong>KeyPath</strong></p>
 
 <p>The <code>keyPath</code> validation will allow you to specify a validation for a given <code>KeyPath</code> of the attributed property.</p>
-<pre class="highlight swift"><code><span class="kd">@Validated(.keyPath(\.isEnabled, .equals(true)</span><span class="p">))</span>
+<pre class="highlight swift"><code><span class="kd">@Validated</span><span class="p">(</span><span class="o">.</span><span class="nf">keyPath</span><span class="p">(\</span><span class="o">.</span><span class="n">isEnabled</span><span class="p">,</span> <span class="o">.</span><span class="nf">equals</span><span class="p">(</span><span class="kc">true</span><span class="p">)))</span>
 <span class="k">var</span> <span class="nv">button</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">?</span>
 </code></pre>
 
 <p><strong>Strings</strong></p>
 
 <p>A String property can be validated in many ways like <code>contains</code>, <code>hasPrefix</code> and even <code>RegularExpressions</code>. </p>
-<pre class="highlight swift"><code><span class="kd">@Validated(.contains("Mr.Robot")</span><span class="p">)</span>
+<pre class="highlight swift"><code><span class="kd">@Validated</span><span class="p">(</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="s">"Mr.Robot"</span><span class="p">))</span>
 <span class="k">var</span> <span class="nv">string</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
 
-<span class="kd">@Validated(.hasPrefix("Mr.")</span><span class="p">)</span>
+<span class="kd">@Validated</span><span class="p">(</span><span class="o">.</span><span class="nf">hasPrefix</span><span class="p">(</span><span class="s">"Mr."</span><span class="p">))</span>
 <span class="k">var</span> <span class="nv">string</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
 
-<span class="kd">@Validated(.hasSuffix("OS")</span><span class="p">)</span>
+<span class="kd">@Validated</span><span class="p">(</span><span class="o">.</span><span class="nf">hasSuffix</span><span class="p">(</span><span class="s">"OS"</span><span class="p">))</span>
 <span class="k">var</span> <span class="nv">string</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
 
-<span class="kd">@Validated(.regularExpression("[0-9]+$")</span><span class="p">)</span>
+<span class="kd">@Validated</span><span class="p">(</span><span class="o">.</span><span class="nf">regularExpression</span><span class="p">(</span><span class="s">"[0-9]+$"</span><span class="p">))</span>
 <span class="k">var</span> <span class="nv">string</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
 
-<span class="kd">@Validated(.isLowercased)</span>
+<span class="kd">@Validated</span><span class="p">(</span><span class="o">.</span><span class="n">isLowercased</span><span class="p">)</span>
 <span class="k">var</span> <span class="nv">string</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
 
-<span class="kd">@Validated(.isUppercased)</span>
+<span class="kd">@Validated</span><span class="p">(</span><span class="o">.</span><span class="n">isUppercased</span><span class="p">)</span>
 <span class="k">var</span> <span class="nv">string</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
 
-<span class="kd">@Validated(.isEmail)</span>
+<span class="kd">@Validated</span><span class="p">(</span><span class="o">.</span><span class="n">isEmail</span><span class="p">)</span>
 <span class="k">var</span> <span class="nv">string</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
 
-<span class="kd">@Validated(.isURL)</span>
+<span class="kd">@Validated</span><span class="p">(</span><span class="o">.</span><span class="n">isURL</span><span class="p">)</span>
 <span class="k">var</span> <span class="nv">string</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
 
-<span class="kd">@Validated(.isNumeric)</span>
+<span class="kd">@Validated</span><span class="p">(</span><span class="o">.</span><span class="n">isNumeric</span><span class="p">)</span>
 <span class="k">var</span> <span class="nv">string</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
 </code></pre>
 
 <p><strong>Equatable</strong></p>
 
 <p>A <code>Equatable</code> type can be validated against a specified value. </p>
-<pre class="highlight swift"><code><span class="kd">@Validated(.equals(42)</span><span class="p">)</span>
+<pre class="highlight swift"><code><span class="kd">@Validated</span><span class="p">(</span><span class="o">.</span><span class="nf">equals</span><span class="p">(</span><span class="mi">42</span><span class="p">))</span>
 <span class="k">var</span> <span class="nv">number</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span>
 </code></pre>
 
 <p><strong>Sequence</strong></p>
 
 <p>A property of type <code>Sequence</code> can be validated via the <code>contains</code> or <code>startsWith</code> validation.</p>
-<pre class="highlight swift"><code><span class="kd">@Validated(.contains("Mr.Robot", "Elliot")</span><span class="p">)</span>
+<pre class="highlight swift"><code><span class="kd">@Validated</span><span class="p">(</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="s">"Mr.Robot"</span><span class="p">,</span> <span class="s">"Elliot"</span><span class="p">))</span>
 <span class="k">var</span> <span class="nv">sequence</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]?</span>
 
-<span class="kd">@Validated(.startsWith("First Entry")</span><span class="p">)</span>
+<span class="kd">@Validated</span><span class="p">(</span><span class="o">.</span><span class="nf">startsWith</span><span class="p">(</span><span class="s">"First Entry"</span><span class="p">))</span>
 <span class="k">var</span> <span class="nv">sequence</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]?</span>
 </code></pre>
 
 <p><strong>Collection</strong></p>
 
 <p>Every <code>Collection</code> type offers the <code>nonEmpty</code> validation and the <code>range</code> validation where you can easily declare the valid capacity.</p>
-<pre class="highlight swift"><code><span class="kd">@Validated(.nonEmpty)</span>
+<pre class="highlight swift"><code><span class="kd">@Validated</span><span class="p">(</span><span class="o">.</span><span class="n">nonEmpty</span><span class="p">)</span>
 <span class="k">var</span> <span class="nv">collection</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]?</span>
 
-<span class="kd">@Validated(.range(1...10)</span><span class="p">)</span>
+<span class="kd">@Validated</span><span class="p">(</span><span class="o">.</span><span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="o">...</span><span class="mi">10</span><span class="p">))</span>
 <span class="k">var</span> <span class="nv">collection</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]?</span>
 </code></pre>
 
 <p><strong>Comparable</strong></p>
 
 <p>A <code>Comparable</code> type can be validated with all common comparable operators.</p>
-<pre class="highlight swift"><code><span class="kd">@Validated(.less(50)</span><span class="p">)</span>
+<pre class="highlight swift"><code><span class="kd">@Validated</span><span class="p">(</span><span class="o">.</span><span class="nf">less</span><span class="p">(</span><span class="mi">50</span><span class="p">))</span>
 <span class="k">var</span> <span class="nv">comparable</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span>
 
-<span class="kd">@Validated(.lessOrEqual(50)</span><span class="p">)</span>
+<span class="kd">@Validated</span><span class="p">(</span><span class="o">.</span><span class="nf">lessOrEqual</span><span class="p">(</span><span class="mi">50</span><span class="p">))</span>
 <span class="k">var</span> <span class="nv">comparable</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span>
 
-<span class="kd">@Validated(.greater(50)</span><span class="p">)</span>
+<span class="kd">@Validated</span><span class="p">(</span><span class="o">.</span><span class="nf">greater</span><span class="p">(</span><span class="mi">50</span><span class="p">))</span>
 <span class="k">var</span> <span class="nv">comparable</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span>
 
-<span class="kd">@Validated(.greaterOrEqual(50)</span><span class="p">)</span>
+<span class="kd">@Validated</span><span class="p">(</span><span class="o">.</span><span class="nf">greaterOrEqual</span><span class="p">(</span><span class="mi">50</span><span class="p">))</span>
 <span class="k">var</span> <span class="nv">comparable</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span>
 </code></pre>
 <h2 id='featured-on' class='heading'>Featured on</h2>
@@ -371,6 +371,7 @@ it, simply add the following line to your Podfile:</p>
 <li><a href="https://iosdevweekly.com/issues/410#start">iOS Dev Weekly</a></li>
 <li><a href="http://digest.swiftweekly.com/issues/swift-weekly-issue-163-186066">Swift Weekly</a></li>
 <li><a href="http://digest.appcoda.com/issues/appcoda-weekly-issue-130-186576">AppCoda Weekly</a></li>
+<li><a href="http://weekly.awesomeios.com/issues/27">AwesomeiOS Weekly</a></li>
 </ul>
 <h2 id='contributing' class='heading'>Contributing</h2>
 
@@ -402,7 +403,7 @@ THE SOFTWARE.
         </section>
         <section id="footer">
           <p>Copyright 2019 Sven Tiigi</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.10.0</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

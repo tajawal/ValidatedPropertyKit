@@ -102,18 +102,18 @@ If the validation fails the <code>Value</code> will become <code>nil</code>.</p>
 <p><code>@Validated</code> can only be applied to <code>Optional</code> types.</p>
 <h1 id='example' class='heading'>Example:</h1>
 <pre class="highlight swift"><code><span class="c1">// Username will be nil if String is empty</span>
-<span class="kd">@Validated(.nonEmpty)</span>
+<span class="kd">@Validated</span><span class="p">(</span><span class="o">.</span><span class="n">nonEmpty</span><span class="p">)</span>
 <span class="k">var</span> <span class="nv">username</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
 
 <span class="c1">// AvatarURL will be nil if String isn't a valid URL and has a "https" prefix</span>
-<span class="kd">@Validated(.isURL &amp;&amp; .hasPrefix("https")</span><span class="p">)</span>
+<span class="kd">@Validated</span><span class="p">(</span><span class="o">.</span><span class="n">isURL</span> <span class="o">&amp;&amp;</span> <span class="o">.</span><span class="nf">hasPrefix</span><span class="p">(</span><span class="s">"https"</span><span class="p">))</span>
 <span class="k">var</span> <span class="nv">avatarURL</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
 </code></pre>
-<h1 id='error-handling' class='heading'>Error Handling 🕵️‍♂️</h1>
+<h1 id='error-handling-️-️' class='heading'>Error Handling 🕵️‍♂️</h1>
 
 <p>Beside doing a simple <code>nil</code> check on your <code>@Validated</code> property to ensure if the value is valid or not
 you can access the validatedValue or validationError property to retrieve the <code><a href="Structs/ValidationError.html">ValidationError</a></code> or the valid value.</p>
-<pre class="highlight swift"><code><span class="kd">@Validated(.nonEmpty)</span>
+<pre class="highlight swift"><code><span class="kd">@Validated</span><span class="p">(</span><span class="o">.</span><span class="n">nonEmpty</span><span class="p">)</span>
 <span class="k">var</span> <span class="nv">username</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
 
 <span class="c1">// Switch on `validatedValue`</span>
@@ -133,10 +133,10 @@ you can access the validatedValue or validationError property to retrieve the <c
     <span class="c1">// Value is valid ✅</span>
 <span class="p">}</span>
 </code></pre>
-<h1 id='restore' class='heading'>Restore ↩️</h1>
+<h1 id='restore-️' class='heading'>Restore ↩️</h1>
 
 <p>You can <code>restore</code> your <code>@Validated</code> property to the last successful validated value.</p>
-<pre class="highlight swift"><code><span class="kd">@Validated(.nonEmpty)</span>
+<pre class="highlight swift"><code><span class="kd">@Validated</span><span class="p">(</span><span class="o">.</span><span class="n">nonEmpty</span><span class="p">)</span>
 <span class="k">var</span> <span class="nv">username</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
 
 <span class="n">username</span> <span class="o">=</span> <span class="s">"Mr.Robot"</span>
@@ -152,7 +152,7 @@ you can access the validatedValue or validationError property to retrieve the <c
 <h1 id='isvalid' class='heading'>isValid ✅</h1>
 
 <p>You can access the isValid Bool value property to check if the current value is valid.</p>
-<pre class="highlight swift"><code><span class="kd">@Validated(.nonEmpty)</span>
+<pre class="highlight swift"><code><span class="kd">@Validated</span><span class="p">(</span><span class="o">.</span><span class="n">nonEmpty</span><span class="p">)</span>
 <span class="k">var</span> <span class="nv">username</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
 
 <span class="n">username</span> <span class="o">=</span> <span class="s">"Mr.Robot"</span>
@@ -165,15 +165,15 @@ you can access the validatedValue or validationError property to retrieve the <c
 
 <p>Validation Operators allowing you to combine multiple Validations like you would do with Bool values.</p>
 <pre class="highlight swift"><code><span class="c1">// Logical AND</span>
-<span class="kd">@Validated(.isURL &amp;&amp; .hasPrefix("https")</span><span class="p">)</span>
+<span class="kd">@Validated</span><span class="p">(</span><span class="o">.</span><span class="n">isURL</span> <span class="o">&amp;&amp;</span> <span class="o">.</span><span class="nf">hasPrefix</span><span class="p">(</span><span class="s">"https"</span><span class="p">))</span>
 <span class="k">var</span> <span class="nv">avatarURL</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
 
 <span class="c1">// Logical OR</span>
-<span class="kd">@Validated(.hasPrefix("Mr.")</span> <span class="o">||</span> <span class="o">.</span><span class="nf">hasPrefix</span><span class="p">(</span><span class="s">"Mrs."</span><span class="p">))</span>
+<span class="kd">@Validated</span><span class="p">(</span><span class="o">.</span><span class="nf">hasPrefix</span><span class="p">(</span><span class="s">"Mr."</span><span class="p">)</span> <span class="o">||</span> <span class="o">.</span><span class="nf">hasPrefix</span><span class="p">(</span><span class="s">"Mrs."</span><span class="p">))</span>
 <span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
 
 <span class="c1">// Logical NOT</span>
-<span class="kd">@Validated(!.contains("Android", options: .caseInsensitive)</span><span class="p">)</span>
+<span class="kd">@Validated</span><span class="p">(</span><span class="o">!.</span><span class="nf">contains</span><span class="p">(</span><span class="s">"Android"</span><span class="p">,</span> <span class="nv">options</span><span class="p">:</span> <span class="o">.</span><span class="n">caseInsensitive</span><span class="p">))</span>
 <span class="k">var</span> <span class="nv">favoriteOperatingSystem</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
 </code></pre>
 
@@ -275,7 +275,7 @@ you can access the validatedValue or validationError property to retrieve the <c
         </section>
         <section id="footer">
           <p>Copyright 2019 Sven Tiigi</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.10.0</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
