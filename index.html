@@ -73,6 +73,9 @@
    <a href="https://developer.apple.com/swift/">
       <img src="https://img.shields.io/badge/Swift-5.1-orange.svg?style=flat" alt="Swift 5.1">
    </a>
+   <a href="https://github.com/SvenTiigi/ValidatedPropertyKit/actions?query=workflow%3ACI">
+      <img src="https://github.com/SvenTiigi/ValidatedPropertyKit/workflows/CI/badge.svg" alt="CI Status">
+   </a>
    <a href="http://cocoapods.org/pods/ValidatedPropertyKit">
       <img src="https://img.shields.io/cocoapods/v/ValidatedPropertyKit.svg?style=flat" alt="Version">
    </a>
@@ -129,10 +132,6 @@
 <li>[x] Customization and configuration to your needs 💪</li>
 </ul>
 <h2 id='installation' class='heading'>Installation</h2>
-
-<blockquote>
-<p>⚠️ ValidatedPropertyKit can currently only be used with Xcode 11 Beta and Swift 5.1.</p>
-</blockquote>
 <h3 id='cocoapods' class='heading'>CocoaPods</h3>
 
 <p>ValidatedPropertyKit is available through <a href="http://cocoapods.org">CocoaPods</a>. To install
@@ -154,7 +153,7 @@ it, simply add the following line to your Podfile:</p>
 
 <p>To integrate using Apple&rsquo;s <a href="https://swift.org/package-manager/">Swift Package Manager</a>, add the following as a dependency to your <code>Package.swift</code>:</p>
 <pre class="highlight swift"><code><span class="nv">dependencies</span><span class="p">:</span> <span class="p">[</span>
-    <span class="o">.</span><span class="nf">package</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/SvenTiigi/ValidatedPropertyKit.git"</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="s">"0.0.1"</span><span class="p">)</span>
+    <span class="o">.</span><span class="nf">package</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/SvenTiigi/ValidatedPropertyKit.git"</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="s">"0.0.3"</span><span class="p">)</span>
 <span class="p">]</span>
 </code></pre>
 
@@ -213,14 +212,14 @@ it, simply add the following line to your Podfile:</p>
 </code></pre>
 <h3 id='error-handling-️-️' class='heading'>Error Handling 🕵️‍♂️</h3>
 
-<p>Each property that is declared with the <code>@Validated</code> attribute can make use of advanced functions and properties from the <code><a href="Structs/Validated.html">Validated</a></code> Property Wrapper itself via the <code>$</code> notation prefix.</p>
+<p>Each property that is declared with the <code>@Validated</code> attribute can make use of advanced functions and properties from the <code><a href="Structs/Validated.html">Validated</a></code> Property Wrapper itself via the <code>_</code> notation prefix.</p>
 
 <p>Beside doing a simple <code>nil</code> check on your <code>@Validated</code> property to ensure if the value is valid or not you can access the <code>validatedValue</code> or <code>validationError</code> property to retrieve the <code><a href="Structs/ValidationError.html">ValidationError</a></code> or the valid value.</p>
 <pre class="highlight swift"><code><span class="kd">@Validated</span><span class="p">(</span><span class="o">.</span><span class="n">nonEmpty</span><span class="p">)</span>
 <span class="k">var</span> <span class="nv">username</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
 
 <span class="c1">// Switch on `validatedValue`</span>
-<span class="k">switch</span> <span class="err">$</span><span class="n">username</span><span class="o">.</span><span class="n">validatedValue</span> <span class="p">{</span>
+<span class="k">switch</span> <span class="n">_username</span><span class="o">.</span><span class="n">validatedValue</span> <span class="p">{</span>
 <span class="k">case</span> <span class="o">.</span><span class="nf">success</span><span class="p">(</span><span class="k">let</span> <span class="nv">value</span><span class="p">):</span>
     <span class="c1">// Value is valid ✅</span>
     <span class="k">break</span>
@@ -230,7 +229,7 @@ it, simply add the following line to your Podfile:</p>
 <span class="p">}</span>
 
 <span class="c1">// Or unwrap the `validationError`</span>
-<span class="k">if</span> <span class="k">let</span> <span class="nv">validationError</span> <span class="o">=</span> <span class="err">$</span><span class="n">username</span><span class="o">.</span><span class="n">validationError</span> <span class="p">{</span>
+<span class="k">if</span> <span class="k">let</span> <span class="nv">validationError</span> <span class="o">=</span> <span class="n">_username</span><span class="o">.</span><span class="n">validationError</span> <span class="p">{</span>
     <span class="c1">// Value is invalid ⛔️</span>
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
     <span class="c1">// Value is valid ✅</span>
@@ -250,7 +249,7 @@ it, simply add the following line to your Podfile:</p>
 <span class="nf">print</span><span class="p">(</span><span class="n">username</span><span class="p">)</span> <span class="c1">// nil</span>
 
 <span class="c1">// Restore to last successful validated value</span>
-<span class="err">$</span><span class="n">username</span><span class="o">.</span><span class="nf">restore</span><span class="p">()</span>
+<span class="n">_username</span><span class="o">.</span><span class="nf">restore</span><span class="p">()</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">username</span><span class="p">)</span> <span class="c1">// "Mr.Robot"</span>
 </code></pre>
 <h3 id='isvalid' class='heading'>isValid ✅</h3>
@@ -260,10 +259,10 @@ it, simply add the following line to your Podfile:</p>
 <span class="k">var</span> <span class="nv">username</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
 
 <span class="n">username</span> <span class="o">=</span> <span class="s">"Mr.Robot"</span>
-<span class="nf">print</span><span class="p">(</span><span class="err">$</span><span class="n">username</span><span class="o">.</span><span class="n">isValid</span><span class="p">)</span> <span class="c1">// true</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">_username</span><span class="o">.</span><span class="n">isValid</span><span class="p">)</span> <span class="c1">// true</span>
 
 <span class="n">username</span> <span class="o">=</span> <span class="s">""</span>
-<span class="nf">print</span><span class="p">(</span><span class="err">$</span><span class="n">username</span><span class="o">.</span><span class="n">isValid</span><span class="p">)</span> <span class="c1">// false</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">_username</span><span class="o">.</span><span class="n">isValid</span><span class="p">)</span> <span class="c1">// false</span>
 </code></pre>
 <h3 id='validation-operators' class='heading'>Validation Operators 🔗</h3>
 
@@ -378,7 +377,7 @@ it, simply add the following line to your Podfile:</p>
 <p>Contributions are very welcome 🙌</p>
 <h2 id='license' class='heading'>License</h2>
 <pre class="highlight plaintext"><code>ValidatedPropertyKit
-Copyright (c) 2019 Sven Tiigi sven.tiigi@gmail.com
+Copyright (c) 2020 Sven Tiigi sven.tiigi@gmail.com
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -402,8 +401,8 @@ THE SOFTWARE.
           </section>
         </section>
         <section id="footer">
-          <p>Copyright 2019 Sven Tiigi</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>Copyright 2020 Sven Tiigi</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

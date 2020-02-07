@@ -70,6 +70,7 @@
                 <div class="language">
                   <pre class="highlight swift"><code><span class="kd">@propertyWrapper</span>
 <span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Validated</span><span class="o">&lt;</span><span class="kt">Value</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">Value</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/Optionalable.html">Optionalable</a></span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">Validated</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Validatable.html">Validatable</a></span></code></pre>
 
                 </div>
               </div>
@@ -164,9 +165,11 @@ you can access the validatedValue or validationError property to retrieve the <c
               <div class="task-name-container">
                 <a name="/Properties"></a>
                 <a name="//apple_ref/swift/Section/Properties" class="dashAnchor"></a>
-                <a href="#/Properties">
-                  <h3 class="section-name">Properties</h3>
-                </a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Properties"></a>
+                  <h3 class="section-name"><p>Properties</p>
+</h3>
+                </div>
               </div>
               <ul>
                 <li class="item">
@@ -256,11 +259,74 @@ you can access the validatedValue or validationError property to retrieve the <c
               <div class="task-name-container">
                 <a name="/Initializer"></a>
                 <a name="//apple_ref/swift/Section/Initializer" class="dashAnchor"></a>
-                <a href="#/Initializer">
-                  <h3 class="section-name">Initializer</h3>
-                </a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Initializer"></a>
+                  <h3 class="section-name"><p>Initializer</p>
+</h3>
+                </div>
               </div>
               <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:20ValidatedPropertyKit0A0V12wrappedValue_ACyxGx_AA10ValidationVy7WrappedQzGtcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(wrappedValue:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:20ValidatedPropertyKit0A0V12wrappedValue_ACyxGx_AA10ValidationVy7WrappedQzGtcfc">init(wrappedValue:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Designated Initializer</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span>
+    <span class="nv">wrappedValue</span><span class="p">:</span> <span class="kt">Value</span><span class="p">,</span>
+    <span class="n">_</span> <span class="nv">validation</span><span class="p">:</span> <span class="kt"><a href="../Structs/Validation.html">Validation</a></span><span class="o">&lt;</span><span class="kt">Value</span><span class="o">.</span><span class="kt">Wrapped</span><span class="o">&gt;</span>
+<span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>wrappedValue</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The wrapped Value</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>validation</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Validation</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
                 <li class="item">
                   <div>
                     <code>
@@ -307,12 +373,25 @@ you can access the validatedValue or validationError property to retrieve the <c
                     </section>
                   </div>
                 </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Projected%20Value"></a>
+                <a name="//apple_ref/swift/Section/Projected Value" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Projected%20Value"></a>
+                  <h3 class="section-name"><p>Projected Value</p>
+</h3>
+                </div>
+              </div>
+              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:20ValidatedPropertyKit0A0V12initialValue_ACyxGx_AA10ValidationVy7WrappedQzGtcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(initialValue:_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:20ValidatedPropertyKit0A0V12initialValue_ACyxGx_AA10ValidationVy7WrappedQzGtcfc">init(initialValue:_:)</a>
+                    <a name="/s:20ValidatedPropertyKit0A0V14projectedValues6ResultOy7WrappedQzAA15ValidationErrorVGvp"></a>
+                    <a name="//apple_ref/swift/Property/projectedValue" class="dashAnchor"></a>
+                    <a class="token" href="#/s:20ValidatedPropertyKit0A0V14projectedValues6ResultOy7WrappedQzAA15ValidationErrorVGvp">projectedValue</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -320,48 +399,16 @@ you can access the validatedValue or validationError property to retrieve the <c
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Designated Initializer</p>
+                        <p>The projected Binding Value</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">initialValue</span><span class="p">:</span> <span class="kt">Value</span><span class="p">,</span>
-            <span class="n">_</span> <span class="nv">validation</span><span class="p">:</span> <span class="kt"><a href="../Structs/Validation.html">Validation</a></span><span class="o">&lt;</span><span class="kt">Value</span><span class="o">.</span><span class="kt">Wrapped</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">projectedValue</span><span class="p">:</span> <span class="kt">Result</span><span class="o">&lt;</span><span class="kt">Value</span><span class="o">.</span><span class="kt">Wrapped</span><span class="p">,</span> <span class="kt"><a href="../Structs/ValidationError.html">ValidationError</a></span><span class="o">&gt;</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>initialValue</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The initial Value</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>validation</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The Validation</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
                       </div>
                     </section>
                   </div>
@@ -370,11 +417,13 @@ you can access the validatedValue or validationError property to retrieve the <c
             </div>
             <div class="task-group">
               <div class="task-name-container">
-                <a name="/Value"></a>
-                <a name="//apple_ref/swift/Section/Value" class="dashAnchor"></a>
-                <a href="#/Value">
-                  <h3 class="section-name">Value</h3>
-                </a>
+                <a name="/Wrapped%20Value"></a>
+                <a name="//apple_ref/swift/Section/Wrapped Value" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Wrapped%20Value"></a>
+                  <h3 class="section-name"><p>Wrapped Value</p>
+</h3>
+                </div>
               </div>
               <ul>
                 <li class="item">
@@ -410,9 +459,11 @@ you can access the validatedValue or validationError property to retrieve the <c
               <div class="task-name-container">
                 <a name="/Validatable"></a>
                 <a name="//apple_ref/swift/Section/Validatable" class="dashAnchor"></a>
-                <a href="#/Validatable">
-                  <h3 class="section-name">Validatable</h3>
-                </a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Validatable"></a>
+                  <h3 class="section-name"><p>Validatable</p>
+</h3>
+                </div>
               </div>
               <ul>
                 <li class="item">
@@ -471,9 +522,11 @@ you can access the validatedValue or validationError property to retrieve the <c
               <div class="task-name-container">
                 <a name="/Restore"></a>
                 <a name="//apple_ref/swift/Section/Restore" class="dashAnchor"></a>
-                <a href="#/Restore">
-                  <h3 class="section-name">Restore</h3>
-                </a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Restore"></a>
+                  <h3 class="section-name"><p>Restore</p>
+</h3>
+                </div>
               </div>
               <ul>
                 <li class="item">
@@ -513,8 +566,8 @@ you can access the validatedValue or validationError property to retrieve the <c
           </section>
         </section>
         <section id="footer">
-          <p>Copyright 2019 Sven Tiigi</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>Copyright 2020 Sven Tiigi</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

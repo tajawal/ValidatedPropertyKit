@@ -69,6 +69,7 @@
               <div class="declaration">
                 <div class="language">
                   <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Validation</span><span class="o">&lt;</span><span class="kt">Value</span><span class="o">&gt;</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">Validation</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Validatable.html">Validatable</a></span></code></pre>
 
                 </div>
               </div>
@@ -80,9 +81,11 @@
               <div class="task-name-container">
                 <a name="/Properties"></a>
                 <a name="//apple_ref/swift/Section/Properties" class="dashAnchor"></a>
-                <a href="#/Properties">
-                  <h3 class="section-name">Properties</h3>
-                </a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Properties"></a>
+                  <h3 class="section-name"><p>Properties</p>
+</h3>
+                </div>
               </div>
               <ul>
                 <li class="item">
@@ -118,9 +121,11 @@
               <div class="task-name-container">
                 <a name="/Initializer"></a>
                 <a name="//apple_ref/swift/Section/Initializer" class="dashAnchor"></a>
-                <a href="#/Initializer">
-                  <h3 class="section-name">Initializer</h3>
-                </a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Initializer"></a>
+                  <h3 class="section-name"><p>Initializer</p>
+</h3>
+                </div>
               </div>
               <ul>
                 <li class="item">
@@ -173,11 +178,515 @@
             </div>
             <div class="task-group">
               <div class="task-name-container">
-                <a name="/Validation+Collection"></a>
-                <a name="//apple_ref/swift/Section/Validation+Collection" class="dashAnchor"></a>
-                <a href="#/Validation+Collection">
-                  <h3 class="section-name">Validation+Collection</h3>
-                </a>
+                <a name="/Validation+Equal"></a>
+                <a name="//apple_ref/swift/Section/Validation+Equal" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Validation+Equal"></a>
+                  <h3 class="section-name"><p>Validation+Equal</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:20ValidatedPropertyKit10ValidationV2eeoiyACyxGAE_AEtFZ"></a>
+                    <a name="//apple_ref/swift/Method/==(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:20ValidatedPropertyKit10ValidationV2eeoiyACyxGAE_AEtFZ">==(_:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns a Validation where two given Validation results will be compared to equality</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="o">==</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">Validation</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">Validation</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Validation</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>lhs</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The left-hand side of the operation</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>rhs</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The right-hand side of the operation</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The new Validation</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Validation+Unequal"></a>
+                <a name="//apple_ref/swift/Section/Validation+Unequal" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Validation+Unequal"></a>
+                  <h3 class="section-name"><p>Validation+Unequal</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:20ValidatedPropertyKit10ValidationV2neoiyACyxGAE_AEtFZ"></a>
+                    <a name="//apple_ref/swift/Method/!=(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:20ValidatedPropertyKit10ValidationV2neoiyACyxGAE_AEtFZ">!=(_:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns a Validation where two given Validation results will be compared to unequality</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="o">!=</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">Validation</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">Validation</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Validation</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>lhs</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The left-hand side of the operation</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>rhs</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The right-hand side of the operation</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The new Validation</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Validation+KeyPath"></a>
+                <a name="//apple_ref/swift/Section/Validation+KeyPath" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Validation+KeyPath"></a>
+                  <h3 class="section-name"><p>Validation+KeyPath</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:20ValidatedPropertyKit10ValidationV7keyPathyACyxGs03KeyF0Cyxqd__G_ACyqd__GtlFZ"></a>
+                    <a name="//apple_ref/swift/Method/keyPath(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:20ValidatedPropertyKit10ValidationV7keyPathyACyxGs03KeyF0Cyxqd__G_ACyqd__GtlFZ">keyPath(_:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Validation via KeyPath</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="n">keyPath</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">keyPath</span><span class="p">:</span> <span class="kt">KeyPath</span><span class="o">&lt;</span><span class="kt">Value</span><span class="p">,</span> <span class="kt">T</span><span class="o">&gt;</span><span class="p">,</span>
+                       <span class="n">_</span> <span class="nv">validation</span><span class="p">:</span> <span class="kt">Validation</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Validation</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>keyPath</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A key path from a specific root type to a specific resulting value type</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>validation</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Validation for the specific resulting value type</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A Validation</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Validation+Not"></a>
+                <a name="//apple_ref/swift/Section/Validation+Not" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Validation+Not"></a>
+                  <h3 class="section-name"><p>Validation+Not</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:20ValidatedPropertyKit10ValidationV1nopyACyxGAEFZ"></a>
+                    <a name="//apple_ref/swift/Method/!(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:20ValidatedPropertyKit10ValidationV1nopyACyxGAEFZ">!(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Performs a logical <code>NOT</code> (<code>!</code>) operation on a Validation</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">prefix</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">!</span> <span class="p">(</span><span class="nv">validation</span><span class="p">:</span> <span class="kt">Validation</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Validation</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>validation</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Validation value to negate</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The negated Validation</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Validation+And"></a>
+                <a name="//apple_ref/swift/Section/Validation+And" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Validation+And"></a>
+                  <h3 class="section-name"><p>Validation+And</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:20ValidatedPropertyKit10ValidationV2aaoiyACyxGAE_AEyXAtFZ"></a>
+                    <a name="//apple_ref/swift/Method/&amp;&amp;(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:20ValidatedPropertyKit10ValidationV2aaoiyACyxGAE_AEyXAtFZ">&amp;&amp;(_:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Performs a logical <code>AND</code> (<code>&amp;&amp;</code>) operation on two Validations</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">Validation</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kd">@autoclosure</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Validation</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Validation</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>lhs</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The left-hand side of the operation</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>rhs</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The right-hand side of the operation</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The new Validation</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Validation+Or"></a>
+                <a name="//apple_ref/swift/Section/Validation+Or" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Validation+Or"></a>
+                  <h3 class="section-name"><p>Validation+Or</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:20ValidatedPropertyKit10ValidationV2oooiyACyxGAE_AEyXAtFZ"></a>
+                    <a name="//apple_ref/swift/Method/||(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:20ValidatedPropertyKit10ValidationV2oooiyACyxGAE_AEyXAtFZ">||(_:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Performs a logical <code>OR</code> (<code>||</code>) operation on two Validations</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="o">||</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">Validation</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kd">@autoclosure</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Validation</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Validation</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>lhs</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The left-hand side of the operation</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>rhs</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The right-hand side of the operation</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The new Validation</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Validatable"></a>
+                <a name="//apple_ref/swift/Section/Validatable" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Validatable"></a>
+                  <h3 class="section-name"><p>Validatable</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:20ValidatedPropertyKit10ValidationV7isValid5values6ResultOyytAA0D5ErrorVGx_tF"></a>
+                    <a name="//apple_ref/swift/Method/isValid(value:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:20ValidatedPropertyKit10ValidationV7isValid5values6ResultOyytAA0D5ErrorVGx_tF">isValid(value:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Validate the Value</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">isValid</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="kt">Value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Result</span><span class="o">&lt;</span><span class="kt">Void</span><span class="p">,</span> <span class="kt"><a href="../Structs/ValidationError.html">ValidationError</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>value</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Value that should be validated</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A Result if the validation succeeded or failed</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Available%20where%20%60Value%60:%20%60Collection%60"></a>
+                <a name="//apple_ref/swift/Section/Available where `Value`: `Collection`" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Available%20where%20%60Value%60:%20%60Collection%60"></a>
+                  <h3 class="section-name"><p>Available where <code>Value</code>: <code>Collection</code></p>
+</h3>
+                </div>
               </div>
               <ul>
                 <li class="item">
@@ -261,11 +770,13 @@
             </div>
             <div class="task-group">
               <div class="task-name-container">
-                <a name="/Validation+Comparable"></a>
-                <a name="//apple_ref/swift/Section/Validation+Comparable" class="dashAnchor"></a>
-                <a href="#/Validation+Comparable">
-                  <h3 class="section-name">Validation+Comparable</h3>
-                </a>
+                <a name="/Available%20where%20%60Value%60:%20%60Comparable%60"></a>
+                <a name="//apple_ref/swift/Section/Available where `Value`: `Comparable`" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Available%20where%20%60Value%60:%20%60Comparable%60"></a>
+                  <h3 class="section-name"><p>Available where <code>Value</code>: <code>Comparable</code></p>
+</h3>
+                </div>
               </div>
               <ul>
                 <li class="item">
@@ -472,157 +983,13 @@
             </div>
             <div class="task-group">
               <div class="task-name-container">
-                <a name="/Validation+Equal"></a>
-                <a name="//apple_ref/swift/Section/Validation+Equal" class="dashAnchor"></a>
-                <a href="#/Validation+Equal">
-                  <h3 class="section-name">Validation+Equal</h3>
-                </a>
-              </div>
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:20ValidatedPropertyKit10ValidationV2eeoiyACyxGAE_AEtFZ"></a>
-                    <a name="//apple_ref/swift/Method/==(_:_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:20ValidatedPropertyKit10ValidationV2eeoiyACyxGAE_AEtFZ">==(_:_:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Returns a Validation where two given Validation results will be compared to equality</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="o">==</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">Validation</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">Validation</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Validation</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>lhs</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The left-hand side of the operation</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>rhs</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The right-hand side of the operation</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>The new Validation</p>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/Validation+Unequal"></a>
-                <a name="//apple_ref/swift/Section/Validation+Unequal" class="dashAnchor"></a>
-                <a href="#/Validation+Unequal">
-                  <h3 class="section-name">Validation+Unequal</h3>
-                </a>
-              </div>
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:20ValidatedPropertyKit10ValidationV2neoiyACyxGAE_AEtFZ"></a>
-                    <a name="//apple_ref/swift/Method/!=(_:_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:20ValidatedPropertyKit10ValidationV2neoiyACyxGAE_AEtFZ">!=(_:_:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Returns a Validation where two given Validation results will be compared to unequality</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="o">!=</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">Validation</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">Validation</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Validation</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>lhs</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The left-hand side of the operation</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>rhs</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The right-hand side of the operation</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>The new Validation</p>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/Validation+Equatable"></a>
-                <a name="//apple_ref/swift/Section/Validation+Equatable" class="dashAnchor"></a>
-                <a href="#/Validation+Equatable">
-                  <h3 class="section-name">Validation+Equatable</h3>
-                </a>
+                <a name="/Available%20where%20%60Value%60:%20%60Equatable%60"></a>
+                <a name="//apple_ref/swift/Section/Available where `Value`: `Equatable`" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Available%20where%20%60Value%60:%20%60Equatable%60"></a>
+                  <h3 class="section-name"><p>Available where <code>Value</code>: <code>Equatable</code></p>
+</h3>
+                </div>
               </div>
               <ul>
                 <li class="item">
@@ -679,292 +1046,13 @@
             </div>
             <div class="task-group">
               <div class="task-name-container">
-                <a name="/Validation+KeyPath"></a>
-                <a name="//apple_ref/swift/Section/Validation+KeyPath" class="dashAnchor"></a>
-                <a href="#/Validation+KeyPath">
-                  <h3 class="section-name">Validation+KeyPath</h3>
-                </a>
-              </div>
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:20ValidatedPropertyKit10ValidationV7keyPathyACyxGs03KeyF0Cyxqd__G_ACyqd__GtlFZ"></a>
-                    <a name="//apple_ref/swift/Method/keyPath(_:_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:20ValidatedPropertyKit10ValidationV7keyPathyACyxGs03KeyF0Cyxqd__G_ACyqd__GtlFZ">keyPath(_:_:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Validation via KeyPath</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="n">keyPath</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">keyPath</span><span class="p">:</span> <span class="kt">KeyPath</span><span class="o">&lt;</span><span class="kt">Value</span><span class="p">,</span> <span class="kt">T</span><span class="o">&gt;</span><span class="p">,</span>
-                       <span class="n">_</span> <span class="nv">validation</span><span class="p">:</span> <span class="kt">Validation</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Validation</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>keyPath</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>A key path from a specific root type to a specific resulting value type</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>validation</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The Validation for the specific resulting value type</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>A Validation</p>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/Validation+Not"></a>
-                <a name="//apple_ref/swift/Section/Validation+Not" class="dashAnchor"></a>
-                <a href="#/Validation+Not">
-                  <h3 class="section-name">Validation+Not</h3>
-                </a>
-              </div>
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:20ValidatedPropertyKit10ValidationV1nopyACyxGAEFZ"></a>
-                    <a name="//apple_ref/swift/Method/!(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:20ValidatedPropertyKit10ValidationV1nopyACyxGAEFZ">!(_:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Performs a logical <code>NOT</code> (<code>!</code>) operation on a Validation</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">prefix</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">!</span> <span class="p">(</span><span class="nv">validation</span><span class="p">:</span> <span class="kt">Validation</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Validation</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>validation</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The Validation value to negate</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>The negated Validation</p>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/Validation+And"></a>
-                <a name="//apple_ref/swift/Section/Validation+And" class="dashAnchor"></a>
-                <a href="#/Validation+And">
-                  <h3 class="section-name">Validation+And</h3>
-                </a>
-              </div>
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:20ValidatedPropertyKit10ValidationV2aaoiyACyxGAE_AEyXAtFZ"></a>
-                    <a name="//apple_ref/swift/Method/&amp;&amp;(_:_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:20ValidatedPropertyKit10ValidationV2aaoiyACyxGAE_AEyXAtFZ">&amp;&amp;(_:_:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Performs a logical <code>AND</code> (<code>&amp;&amp;</code>) operation on two Validations</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">Validation</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kd">@autoclosure</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Validation</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Validation</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>lhs</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The left-hand side of the operation</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>rhs</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The right-hand side of the operation</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>The new Validation</p>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/Validation+Or"></a>
-                <a name="//apple_ref/swift/Section/Validation+Or" class="dashAnchor"></a>
-                <a href="#/Validation+Or">
-                  <h3 class="section-name">Validation+Or</h3>
-                </a>
-              </div>
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:20ValidatedPropertyKit10ValidationV2oooiyACyxGAE_AEyXAtFZ"></a>
-                    <a name="//apple_ref/swift/Method/||(_:_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:20ValidatedPropertyKit10ValidationV2oooiyACyxGAE_AEyXAtFZ">||(_:_:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Performs a logical <code>OR</code> (<code>||</code>) operation on two Validations</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="o">||</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">Validation</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kd">@autoclosure</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Validation</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Validation</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>lhs</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The left-hand side of the operation</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>rhs</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The right-hand side of the operation</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>The new Validation</p>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/Validation+Sequence"></a>
-                <a name="//apple_ref/swift/Section/Validation+Sequence" class="dashAnchor"></a>
-                <a href="#/Validation+Sequence">
-                  <h3 class="section-name">Validation+Sequence</h3>
-                </a>
+                <a name="/Available%20where%20%60Value%60:%20%60Sequence%60,%20%60Value.Element%60:%20%60Equatable%60"></a>
+                <a name="//apple_ref/swift/Section/Available where `Value`: `Sequence`, `Value.Element`: `Equatable`" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Available%20where%20%60Value%60:%20%60Sequence%60,%20%60Value.Element%60:%20%60Equatable%60"></a>
+                  <h3 class="section-name"><p>Available where <code>Value</code>: <code>Sequence</code>, <code>Value.Element</code>: <code>Equatable</code></p>
+</h3>
+                </div>
               </div>
               <ul>
                 <li class="item">
@@ -1072,11 +1160,13 @@ of the sequence are the same as the elements in another sequence</p>
             </div>
             <div class="task-group">
               <div class="task-name-container">
-                <a name="/Validation+StringProtocol"></a>
-                <a name="//apple_ref/swift/Section/Validation+StringProtocol" class="dashAnchor"></a>
-                <a href="#/Validation+StringProtocol">
-                  <h3 class="section-name">Validation+StringProtocol</h3>
-                </a>
+                <a name="/Available%20where%20%60Value%60:%20%60StringProtocol%60"></a>
+                <a name="//apple_ref/swift/Section/Available where `Value`: `StringProtocol`" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Available%20where%20%60Value%60:%20%60StringProtocol%60"></a>
+                  <h3 class="section-name"><p>Available where <code>Value</code>: <code>StringProtocol</code></p>
+</h3>
+                </div>
               </div>
               <ul>
                 <li class="item">
@@ -1246,11 +1336,13 @@ of the sequence are the same as the elements in another sequence</p>
             </div>
             <div class="task-group">
               <div class="task-name-container">
-                <a name="/Validation+String"></a>
-                <a name="//apple_ref/swift/Section/Validation+String" class="dashAnchor"></a>
-                <a href="#/Validation+String">
-                  <h3 class="section-name">Validation+String</h3>
-                </a>
+                <a name="/Available%20where%20%60Value%60%20==%20%60String%60"></a>
+                <a name="//apple_ref/swift/Section/Available where `Value` == `String`" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Available%20where%20%60Value%60%20==%20%60String%60"></a>
+                  <h3 class="section-name"><p>Available where <code>Value</code> == <code>String</code></p>
+</h3>
+                </div>
               </div>
               <ul>
                 <li class="item">
@@ -1529,72 +1621,11 @@ of the sequence are the same as the elements in another sequence</p>
                 </li>
               </ul>
             </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/Validatable"></a>
-                <a name="//apple_ref/swift/Section/Validatable" class="dashAnchor"></a>
-                <a href="#/Validatable">
-                  <h3 class="section-name">Validatable</h3>
-                </a>
-              </div>
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:20ValidatedPropertyKit10ValidationV7isValid5values6ResultOyytAA0D5ErrorVGx_tF"></a>
-                    <a name="//apple_ref/swift/Method/isValid(value:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:20ValidatedPropertyKit10ValidationV7isValid5values6ResultOyytAA0D5ErrorVGx_tF">isValid(value:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Validate the Value</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">isValid</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="kt">Value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Result</span><span class="o">&lt;</span><span class="kt">Void</span><span class="p">,</span> <span class="kt"><a href="../Structs/ValidationError.html">ValidationError</a></span><span class="o">&gt;</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>value</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The Value that should be validated</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>A Result if the validation succeeded or failed</p>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
           </section>
         </section>
         <section id="footer">
-          <p>Copyright 2019 Sven Tiigi</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>Copyright 2020 Sven Tiigi</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
