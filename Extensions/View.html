@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Optionalable Protocol Reference</title>
+    <title>View Extension Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -13,8 +13,8 @@
     <script src="../js/jazzy.search.js" defer></script>
   </head>
   <body>
-    <a name="//apple_ref/swift/Protocol/Optionalable" class="dashAnchor"></a>
-    <a title="Optionalable Protocol Reference"></a>
+    <a name="//apple_ref/swift/Extension/View" class="dashAnchor"></a>
+    <a title="View Extension Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">ValidatedPropertyKit 0.0.5 Docs</a> (100% documented)</p>
@@ -29,7 +29,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">ValidatedPropertyKit Reference</a>
         <img id="carat" src="../img/carat.png" />
-        Optionalable Protocol Reference
+        View Extension Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -73,16 +73,15 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>Optionalable</h1>
+            <h1>View</h1>
               <div class="declaration">
                 <div class="language">
                   
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Optionalable</span> <span class="p">:</span> <span class="kt">ExpressibleByNilLiteral</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">View</span></code></pre>
 
                 </div>
               </div>
-            <p>The Optionalable protocol</p>
-
+            
           </section>
           <section class="section task-group-section">
             <div class="task-group">
@@ -90,9 +89,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:20ValidatedPropertyKit12OptionalableP7WrappedQa"></a>
-                    <a name="//apple_ref/swift/Alias/Wrapped" class="dashAnchor"></a>
-                    <a class="token" href="#/s:20ValidatedPropertyKit12OptionalableP7WrappedQa">Wrapped</a>
+                    <a name="/s:7SwiftUI4ViewP20ValidatedPropertyKitE9validatedyQrAD11Validatable_pd_tF"></a>
+                    <a name="//apple_ref/swift/Method/validated(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7SwiftUI4ViewP20ValidatedPropertyKitE9validatedyQrAD11Validatable_pd_tF">validated(_:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -100,68 +99,17 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The underlying wrapped type</p>
+                        <p>Adds a condition that controls whether users can interact
+with this view if all given <code><a href="../Protocols/Validatable.html">Validatable</a></code> instances are valid</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">associatedtype</span> <span class="kt">Wrapped</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:20ValidatedPropertyKit12OptionalableP7wrapped7WrappedQzSgvp"></a>
-                    <a name="//apple_ref/swift/Property/wrapped" class="dashAnchor"></a>
-                    <a class="token" href="#/s:20ValidatedPropertyKit12OptionalableP7wrapped7WrappedQzSgvp">wrapped</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The wrapped value</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">wrapped</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Optionalable.html#/s:20ValidatedPropertyKit12OptionalableP7WrappedQa">Wrapped</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:20ValidatedPropertyKit12OptionalablePyx7WrappedQzcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:20ValidatedPropertyKit12OptionalablePyx7WrappedQzcfc">init(_:<wbr>)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Initializer with wrapped value</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">some</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Optionalable.html#/s:20ValidatedPropertyKit12OptionalableP7WrappedQa">Wrapped</a></span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">validated</span><span class="p">(</span>
+    <span class="n">_</span> <span class="nv">validatables</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Validatable.html">Validatable</a></span><span class="o">...</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
 
                         </div>
                       </div>
@@ -172,12 +120,12 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>some</em>
+                                <em>validatables</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The wrapped value</p>
+                                  <p>The Validatables</p>
                                 </div>
                               </td>
                             </tr>
