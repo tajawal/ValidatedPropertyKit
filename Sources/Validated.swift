@@ -14,9 +14,9 @@ import SwiftUI
 /// A Validated PropertyWrapper
 @propertyWrapper
 public struct Validated<Value>: DynamicProperty, Validatable {
-    
+
     // MARK: Properties
-    
+
     /// The Storage
     @StateObject
     private var storage: Storage
@@ -44,7 +44,7 @@ public struct Validated<Value>: DynamicProperty, Validatable {
             }
         )
     }
-    
+
     /// The wrapped Value
     public var wrappedValue: Value {
         get {
@@ -56,9 +56,13 @@ public struct Validated<Value>: DynamicProperty, Validatable {
             self.storage.value = newValue
         }
     }
-    
+
+    public var invalidAttempts: Int {
+        self.storage.invalidAttempts
+    }
+
     // MARK: Initializer
-    
+
     /// Designated Initializer
     /// - Parameters:
     ///   - wrappedValue: The wrapped `Value`
@@ -74,9 +78,9 @@ public struct Validated<Value>: DynamicProperty, Validatable {
             )
         )
     }
-    
+
     // MARK: Update Validation
-    
+
     /// Update the Validation
     /// - Parameters:
     ///   - reValidateValue: Bool value if current Value should be revalidated with new Validation. Default value `true`
@@ -95,7 +99,11 @@ public struct Validated<Value>: DynamicProperty, Validatable {
         // Perform Validation
         self.storage.validate()
     }
-    
+
+    public func highlightIfNeeded() {
+        storage.objectWillChange.send()
+        storage.onDemandValidation()
+    }
 }
 
 // MARK: - Validated+Optionalable
@@ -149,7 +157,14 @@ private extension Validated {
         
         /// Bool value if validated value is valid
         var isValid: Bool
-        
+
+        /// Int value to keep track of the number of invalid login attempts
+        var invalidAttempts: Int {
+            willSet {
+                objectWillChange.send()
+            }
+        }
+
         // MARK: Initializer
         
         /// Designated Initializer
@@ -163,16 +178,24 @@ private extension Validated {
             self.value = value
             self.validation = validation
             self.isValid = self.validation.isValid(value: self.value)
+            self.invalidAttempts = 0
         }
-        
+
         // MARK: Validate
-        
+
         /// Perform Validation
         func validate() {
             // Validate value
             self.isValid = self.validation.isValid(value: self.value)
+
+            if isValid {
+                self.invalidAttempts = 0
+            }
         }
-        
+
+        func onDemandValidation() {
+            self.validate()
+            self.invalidAttempts = isValid ? 0 : invalidAttempts + 1
+        }
     }
-    
 }

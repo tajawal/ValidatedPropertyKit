@@ -99,6 +99,10 @@
 		3DE155D225A9CA4B00D620B7 /* ValidationEquatableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE155C525A9CA4B00D620B7 /* ValidationEquatableTests.swift */; };
 		3DE155D325A9CA4B00D620B7 /* ValidationEquatableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE155C525A9CA4B00D620B7 /* ValidationEquatableTests.swift */; };
 		3DE155D425A9CA4B00D620B7 /* ValidationEquatableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE155C525A9CA4B00D620B7 /* ValidationEquatableTests.swift */; };
+		540D2E9D26136FB90041F76A /* ValidationViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540D2E9C26136FB90041F76A /* ValidationViewModifier.swift */; };
+		540D2EB3261370A80041F76A /* ValidationViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540D2E9C26136FB90041F76A /* ValidationViewModifier.swift */; };
+		540D2EBB261370A90041F76A /* ValidationViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540D2E9C26136FB90041F76A /* ValidationViewModifier.swift */; };
+		540D2EC3261370A90041F76A /* ValidationViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540D2E9C26136FB90041F76A /* ValidationViewModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -192,6 +196,7 @@
 		3DE155C325A9CA4B00D620B7 /* ValidationCollectionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationCollectionTests.swift; sourceTree = "<group>"; };
 		3DE155C425A9CA4B00D620B7 /* ValidationSequenceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationSequenceTests.swift; sourceTree = "<group>"; };
 		3DE155C525A9CA4B00D620B7 /* ValidationEquatableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationEquatableTests.swift; sourceTree = "<group>"; };
+		540D2E9C26136FB90041F76A /* ValidationViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ValidationViewModifier.swift; path = ../../../ValidationViewModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -331,6 +336,7 @@
 			isa = PBXGroup;
 			children = (
 				3DDD97622569C1D3006FE065 /* Validated.swift */,
+				540D2E9B26136FA20041F76A /* ViewModifier */,
 				3D59C06025A3D70900B94734 /* Validatable */,
 				3DDD979D2569C64E006FE065 /* Validation */,
 				3D512B5F25A451E700753C4E /* Optionalable */,
@@ -395,6 +401,14 @@
 				3DE155C525A9CA4B00D620B7 /* ValidationEquatableTests.swift */,
 			);
 			path = ValidationTests;
+			sourceTree = "<group>";
+		};
+		540D2E9B26136FA20041F76A /* ViewModifier */ = {
+			isa = PBXGroup;
+			children = (
+				540D2E9C26136FB90041F76A /* ValidationViewModifier.swift */,
+			);
+			path = ViewModifier;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -788,6 +802,7 @@
 				3D4040F725A4745500F30306 /* Validation+BinaryInteger.swift in Sources */,
 				3DDD97B22569C752006FE065 /* Validation+LogicalOperators.swift in Sources */,
 				3D59C04E25A3D13D00B94734 /* View+validated.swift in Sources */,
+				540D2E9D26136FB90041F76A /* ValidationViewModifier.swift in Sources */,
 				3DDD97BE2569C96C006FE065 /* Validation+ComparisonOperators.swift in Sources */,
 				3DDD97632569C1D3006FE065 /* Validated.swift in Sources */,
 				3D512B6125A451F000753C4E /* Optionalable.swift in Sources */,
@@ -819,6 +834,7 @@
 				3D59C06325A3D72100B94734 /* Validatable+LogicalOperators.swift in Sources */,
 				3D512B6E25A4520600753C4E /* Optional+Optionalable.swift in Sources */,
 				3D30DFC3256A890000F68068 /* Validation+Constant.swift in Sources */,
+				540D2EB3261370A80041F76A /* ValidationViewModifier.swift in Sources */,
 				3DDD97A72569C661006FE065 /* Validation+String.swift in Sources */,
 				3D59C03B25A3D10400B94734 /* Validatable.swift in Sources */,
 				3DDD97F62569CA75006FE065 /* Validation+Comparable.swift in Sources */,
@@ -843,6 +859,7 @@
 				3D59C06425A3D72100B94734 /* Validatable+LogicalOperators.swift in Sources */,
 				3D512B6F25A4520600753C4E /* Optional+Optionalable.swift in Sources */,
 				3D30DFC4256A890000F68068 /* Validation+Constant.swift in Sources */,
+				540D2EBB261370A90041F76A /* ValidationViewModifier.swift in Sources */,
 				3DDD97A82569C661006FE065 /* Validation+String.swift in Sources */,
 				3D59C03C25A3D10400B94734 /* Validatable.swift in Sources */,
 				3DDD97F72569CA75006FE065 /* Validation+Comparable.swift in Sources */,
@@ -867,6 +884,7 @@
 				3D59C06525A3D72100B94734 /* Validatable+LogicalOperators.swift in Sources */,
 				3D512B7025A4520600753C4E /* Optional+Optionalable.swift in Sources */,
 				3D30DFC5256A890000F68068 /* Validation+Constant.swift in Sources */,
+				540D2EC3261370A90041F76A /* ValidationViewModifier.swift in Sources */,
 				3DDD97A92569C661006FE065 /* Validation+String.swift in Sources */,
 				3D59C03D25A3D10400B94734 /* Validatable.swift in Sources */,
 				3DDD97F82569CA75006FE065 /* Validation+Comparable.swift in Sources */,
