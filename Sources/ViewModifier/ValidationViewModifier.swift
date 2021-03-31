@@ -23,16 +23,14 @@ struct ValidationViewModifier<Value>: AnimatableModifier {
 }
 
 struct ShakeEffect: GeometryEffect {
-    var travelDisatance: CGFloat = 6
-    var numberOfShakes: CGFloat = 4
+    var amount: CGFloat = 10
+    var shakesPerUnit = 3
     var animatableData: CGFloat
 
-    init(shakes: Int) {
-        animatableData = CGFloat(shakes)
-    }
-
     func effectValue(size: CGSize) -> ProjectionTransform {
-        let translationX = travelDisatance * sin(animatableData * .pi * numberOfShakes)
-        return ProjectionTransform(CGAffineTransform(translationX: translationX, y: 0))
+        ProjectionTransform(CGAffineTransform(translationX:
+            amount * sin(animatableData * .pi * CGFloat(shakesPerUnit)),
+            y: 0))
     }
 }
+
