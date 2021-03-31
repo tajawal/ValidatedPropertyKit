@@ -18,7 +18,7 @@ public struct Validated<Value>: DynamicProperty, Validatable {
     // MARK: Properties
 
     /// The Storage
-    @StateObject
+    @ObservedObject
     private var storage: Storage
     
     /// The Validation
