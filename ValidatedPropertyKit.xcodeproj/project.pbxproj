@@ -196,7 +196,7 @@
 		3DE155C325A9CA4B00D620B7 /* ValidationCollectionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationCollectionTests.swift; sourceTree = "<group>"; };
 		3DE155C425A9CA4B00D620B7 /* ValidationSequenceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationSequenceTests.swift; sourceTree = "<group>"; };
 		3DE155C525A9CA4B00D620B7 /* ValidationEquatableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationEquatableTests.swift; sourceTree = "<group>"; };
-		540D2E9C26136FB90041F76A /* ValidationViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ValidationViewModifier.swift; path = ../../../ValidationViewModifier.swift; sourceTree = "<group>"; };
+		540D2E9C26136FB90041F76A /* ValidationViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationViewModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

@@ -8,17 +8,19 @@
 
 import SwiftUI
 
-struct ValidationViewModifier<Value>: AnimatableModifier {
-    private let prop: Validated<Value>
+public struct ValidationViewModifier: AnimatableModifier {
+    @State var attempts: Int = 0
+    @State var isValid: Bool = false
 
-    init(prop: Validated<Value>) {
-        self.prop = prop
+    public init(attempts: Int, isValid: Bool) {
+        self.attempts = attempts
+        self.isValid = isValid
     }
 
-    func body(content: Content) -> some View {
+    public func body(content: Content) -> some View {
         content
-            .shakeEffect(shakes: prop.invalidAttempts)
-            .animation(prop.isValid ? .none : .linear)
+            .shakeEffect(shakes: attempts)
+            .animation(isValid ? .none : .linear)
     }
 }
 
@@ -33,4 +35,3 @@ struct ShakeEffect: GeometryEffect {
             y: 0))
     }
 }
-
