@@ -27,8 +27,8 @@ public extension View {
 
     /// Adds a shake animation when manually apply validations
     /// - Parameter prop: projected value of `Validated`
-    func validation(attempts: Int, isValid: Bool) -> some View {
-        modifier(ValidationViewModifier(attempts: attempts, isValid: isValid))
+    func validation<Value>(_ prop: Validated<Value>) -> some View {
+        modifier(ValidationViewModifier(prop: prop))
     }
 
     /// Adds shake animation to a view
