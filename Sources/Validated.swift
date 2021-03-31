@@ -137,9 +137,9 @@ private extension Validated {
     
     /// The Storage
     final class Storage: ObservableObject {
-        
+
         // MARK: Properties
-        
+
         /// The Value
         var value: Value {
             willSet {
@@ -151,22 +151,18 @@ private extension Validated {
                 self.validate()
             }
         }
-        
+
         /// The Validation
         var validation: Validation<Value>
-        
+
         /// Bool value if validated value is valid
         var isValid: Bool
 
         /// Int value to keep track of the number of invalid login attempts
-        var invalidAttempts: Int {
-            willSet {
-                objectWillChange.send()
-            }
-        }
+        var invalidAttempts: Int
 
         // MARK: Initializer
-        
+
         /// Designated Initializer
         /// - Parameters:
         ///   - value: The Value
@@ -187,10 +183,6 @@ private extension Validated {
         func validate() {
             // Validate value
             self.isValid = self.validation.isValid(value: self.value)
-
-            if isValid {
-                self.invalidAttempts = 0
-            }
         }
 
         func onDemandValidation() {
