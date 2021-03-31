@@ -17,12 +17,8 @@ struct ValidationViewModifier<Value>: AnimatableModifier {
 
     func body(content: Content) -> some View {
         content
-            .overlay(
-                RoundedRectangle(cornerRadius: 8)
-                    .stroke(lineWidth: 1)
-                    .foregroundColor(prop.invalidAttempts == 0 ? .clear : .red)
-            )
             .shakeEffect(shakes: prop.invalidAttempts)
+            .animation(prop.isValid ? .none : .linear)
     }
 }
 

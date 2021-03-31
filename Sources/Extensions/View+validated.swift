@@ -34,7 +34,6 @@ public extension View {
     /// Adds shake animation to a view
     /// - Parameter shakes: number of shakes
     func shakeEffect(shakes: Int) -> some View {
-        modifier(ShakeEffect(shakes: shakes))
-            .animation(.linear)
+        modifier(ShakeEffect(animatableData: CGFloat(shakes)))
     }
 }
